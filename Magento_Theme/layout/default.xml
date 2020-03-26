@@ -69,11 +69,11 @@
                     </arguments>
                 </block>
 
-                <block
+                <!--block
                     class="Magento\Newsletter\Block\Subscribe"
                     name="footer-newsletter"
                     template="Magento_Newsletter::subscribe.phtml"
-                />
+                /-->
 
                 <block
                     class="Magento\Framework\View\Element\Template"
@@ -105,10 +105,15 @@
         <referenceBlock name="sale.reorder.sidebar" remove="true"/>
         <referenceBlock name="wishlist_sidebar" remove="true"/>
         <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="reviews.tab" remove="true" />
+        <referenceBlock name="product.review.form" remove="true" />
+        <referenceBlock name="product.info.review" remove="true" />
 
         <!--Removed constainers-->
         <referenceContainer name="header.container" remove="true" />
         <referenceContainer name="footer" remove="true" />
+
+        <referenceContainer name="product.cms.content" remove="true" />
 
         <!--Moved blocks-->
         <move element="logo" destination="header.content" />

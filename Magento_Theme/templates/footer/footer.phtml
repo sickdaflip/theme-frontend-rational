@@ -1,19 +1,30 @@
-<div class="footer__handler container row">
+<div class="footer__handler container row middle-md">
     <button
-        class="button footer__scroll-top"
-        type="button"
-        aria-label="<?= __('Scroll to top') ?>"
-        data-mage-init='{ "scrollTop": { } }'
+            class="button footer__scroll-top"
+            type="button"
+            aria-label="<?= __('Scroll to top') ?>"
+            data-mage-init='{ "scrollTop": { } }'
     >
         <svg class="icon footer__icon" role="img">
             <title><?= __('Arrow up') ?></title>
             <use xlink:href="<?= $block->getViewFileUrl('images/icons-sprite.svg#arrow-up') ?>"></use>
         </svg>
     </button>
-    <section class="footer__newsletter col-xs-12 col-lg-3">
-        <?= $this->getChildHtml('footer-newsletter') ?>
+    <section class="footer__b2b-attention col-xs-12 col-lg-4">
+        <?= $this->getLayout()
+            ->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId('footer_b2b_attention')
+            ->toHtml();
+        ?>
     </section>
-    <section class="footer__links col-xs-12 col-lg-9">
+    <section class="footer__info col-xs-12 col-lg-1 center-xs">
+        <?= $this->getLayout()
+            ->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId('footer_info')
+            ->toHtml();
+        ?>
+    </section>
+    <section class="footer__links col-xs-12 col-lg-7">
         <?= $this->getChildHtml('footer-menu') ?>
     </section>
 </div>
@@ -21,18 +32,20 @@
     <div class="footer__bottom-bar-handler container">
         <?= $this->getChildHtml('social-links') ?>
         <small class="footer__copyright">
-            <?= __('Copyright © 2018 Alpaca. All rights reserved.') ?>
+            Copyright New Gastroline GmbH <?= date('Y') ?>, All Rights Reserved.
         </small>
     </div>
 </section>
 <div
-    class="cookie-message"
-    data-type="cookie"
-    data-mage-init='{ "cookieMessage": { } }'
+        class="cookie-message"
+        data-type="cookie"
+        data-mage-init='{ "cookieMessage": { } }'
 >
     <div class="cookie-message__container">
         <span class="cookie-message__text">
-            <a href="#" class="cookie-message__link">Example link</a> Find out more about their purpose and settings in your browser. By browsing the site you are agreeing to use cookies according to your browser settings.
+            <?= __('Diese Website ben&ouml;tigt Cookies, um alle Funktionen bereitzustellen. Weitere Informationen dar&uuml;ber, welche Daten in den Cookies enthalten sind, finden Sie in unserer'); ?>
+            <a href="<?= $block->getUrl('datenschutz'); ?>"
+               class="cookie-message__link"><?= __('Datenschutzerkl&auml;rung'); ?></a><?= __('.'); ?>
         </span>
         <button class="cookie-message__close" type="button">
             <svg class="cookie-message__close-icon">

@@ -36,10 +36,7 @@
                 <referenceContainer name="product.info.main" htmlClass="product-view__secondary-details">
                     <referenceBlock name="product.info.downloadable.samples" />
 
-                    <referenceBlock
-                        name="product.info.overview"
-                        template="Magento_Catalog::product/view/shortDescription.phtml"
-                    />
+                    <referenceBlock name="product.info.overview" remove="true"/>
 
                     <referenceBlock name="product.info">
                         <container
@@ -75,11 +72,7 @@
                     </container>
                     </referenceBlock>
 
-                    <block
-                        class="Magento\Catalog\Block\Product\View"
-                        name="product.column.right.benefits"
-                        template="Magento_Catalog::product/view/benefits.phtml"
-                    />
+                    <referenceBlock name="product.column.right.benefits" remove="true"/>
                 </referenceContainer>
             </container>
 
