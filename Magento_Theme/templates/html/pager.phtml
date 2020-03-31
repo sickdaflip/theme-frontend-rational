@@ -7,7 +7,7 @@
             <div class="toolbar__amount--visible">
                 <span class="toolbar__amount-content">
                     <?php if ($block->getLastPageNum()>1): ?>
-                        <?= __('Items %1 to %2 of %3 total', $block->getFirstNum(), $block->getLastNum(), $block->getTotalNum()) ?>
+                        <?= __('Artikel %1 bis %2 von %3', $block->getFirstNum(), $block->getLastNum(), $block->getTotalNum()) ?>
                     <?php elseif ($block->getTotalNum() == 1): ?>
                         <?= __('%1 Item', $block->getTotalNum()) ?>
                     <?php else: ?>

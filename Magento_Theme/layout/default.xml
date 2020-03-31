@@ -69,12 +69,6 @@
                     </arguments>
                 </block>
 
-                <!--block
-                    class="Magento\Newsletter\Block\Subscribe"
-                    name="footer-newsletter"
-                    template="Magento_Newsletter::subscribe.phtml"
-                /-->
-
                 <block
                     class="Magento\Framework\View\Element\Template"
                     name="social-links"
